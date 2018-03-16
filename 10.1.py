@@ -1,77 +1,41 @@
 #函数：
-#1.0.局部变量和全局变量()
-a = 400 #全局变量，可以在后面的代码中使用。
-def test1():
-    a = 200 #局部变量只能在该函数中使用；作用域为函数体内；
-    a += 50
-    print("test1中a的值为： %s"%a)  
-    return a
+##1.0.局部变量和全局变量()
+# a = 400 #全局变量，可以在后面的代码中使用。
+# def test1():
+#     a = 200 #局部变量只能在该函数中使用；作用域为函数体内；
+#     a += 50
+#     print("test1中a的值为： %s"%a)  
+#     return a
 
-def test2(a):
-    #a = 300  
-    print("test2函数中a的值为： %s"%a)
+# def test2(a):
+#     #a = 300  
+#     print("test2函数中a的值为： %s"%a)
 
-a = test1() #如果函数的局部变量和全局变量的名字一样，优先使用的是局部变量。
-test2(a)
-print(a)
+# a = test1() #如果函数的局部变量和全局变量的名字一样，优先使用的是局部变量。
+# test2(a)
+# print(a)
 
+##2.0.在函数中全局变量修改:如果是可变类型可以执行修改变量的值；
+# 不可变类型值是不能修改：本质上来说不可变类型值的修改，只是修改了引用。
 
-# 可变变量，不可变变量
-# #函数返回多个结果
-# def test():
-#     a = 1
-#     b = 2
-#     return a, b
+names = ["one", "two", "three"] #列表
+student = {"name":"onex"}       #字典
+a = "miss"                      #字符串
+b = 200
 
-# #函数传参:
-# def test1(x, y):
-#     x.replace("c", "C")  
-#     y.append(10)
-#     printf("x变量指向内存地址为：%s"%id(x))
-#     printf("y变量指向的内存地址为：%s"%id(y))
+def test3():
+    print("原始全局变量为： %s"%names)
+    names[2] = "four"              #修改全局变量
+    student["age"] = 23
+    global a
+    a = "toyota"                
+    b =b + 1
 
-# a="abcdef"
-# b=[1, 2, 3]
-# printf("a变量指向的内存地址为：%s"%id(a))
-# printf("b变量指向的内存地址为：%s"%id(b))
+test3()
 
-# test1(a, b)
-# 封装函数：学生管理系统
-# 递归函数：
-
-
-
-# 经常使用：
-#     cd ls pwd touch mkdir chmod
-#     cp mv rm
-#     cat more less head tail 
-#     ln:   建立连接文件
-#     wc:     统计文件行数、字符数、单词数
-#     whatis: 命名简单说明
-#     whereis: 命令的源程序或手册位置
-#     which: 可执行程序的路径和它的别名
-
-# 压缩与解压
-#     tar\tar.gz文件解压及压缩
-#     tar xvf test.tar
-#     tar xvf test.tar /dir1 /dir2 file3
-#     tar xzvf linux.tar.gz
-#     tar czvf test.tar.gz /dir1 /dir2 file3
-
-#     .gz/ .z/ .Z/ .tgz格式文件
-#     gzip file1 file2
-#     gzip -d file1.gz
-#     gzip -r /dir1
-#     gzip -rd /dir
-
-# 系统相关
-#     time, data, uname, lsb_release
-#     du: 统计文件和目录所占磁盘空间
-#     dmesg: 显示内核状态信息
-#     uptime: 显示时间、系统运行时间、用户连接、负载；
-#     who/w: 查看登录用户
-#     whoami\hostname
-#     cal\bo:日历、计算器
-
+print("现在列表的元素：%s"%names)
+print("现在元祖的元素：%s"%student)
+print("现在字符串的元素：%s"%a)
+print("现在常量的元素：%s"%a)
 
     
