@@ -76,3 +76,14 @@ test2(2, 3, 4, 5, 6, num1=5, num2=6) #字典表示
     names = [3,4]
     names2 = {"num1":5, "sdf":6} 
     test2(2, *names, **names2)  ##拆包
+##4
+def test(x,y)
+    x.replace("c", "C")
+    y.append(10)
+    print("x变量的内存地址为：%s"%id(x))
+    print("x变量的内存地址为：%s"%id(y))
+
+a="abcdef"
+b=[1,2,3]
+print("a变量指向内存地址为：%s"%id(a))
+print("a变量指向内存地址为：%s"%id(b))
