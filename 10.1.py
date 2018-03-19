@@ -56,20 +56,23 @@ print(x) #返回元祖
 ##1.缺省参数：
 def test1(x,y,z=10): #带有默认值的参数一定要位于参数列表的最后面
     return x+y+z
-print("sum = %s"%test1(5))
+print("sum = %s"%test1(5,6))
 
 ##2.不定长参数:
-def test2(x,y, *args, **kwargs):
-    print(x,y)
+def test2(x, *args, **kwargs):
+    print(x)
     print(args)
     print(kwargs)
-
     sum = x
     for i in args:
         sum+=i
-   
     for i in kwargs.values():
         sum+=i
      print("sum = %s"%sum)
 
-test1(2,3,4,5,6,num1=5, num2=6) #字典表示
+test2(2, 3, 4, 5, 6, num1=5, num2=6) #字典表示
+
+##3.集合的拆包：
+    names = [3,4]
+    names2 = {"num1":5, "sdf":6} 
+    test2(2, *names, **names2)  ##拆包
