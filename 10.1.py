@@ -76,7 +76,7 @@ test2(2, 3, 4, 5, 6, num1=5, num2=6) #字典表示
     names = [3,4]
     names2 = {"num1":5, "sdf":6} 
     test2(2, *names, **names2)  ##拆包
-##4
+
 def test(x,y)
     x.replace("c", "C")
     y.append(10)
@@ -87,3 +87,47 @@ a="abcdef"
 b=[1,2,3]
 print("a变量指向内存地址为：%s"%id(a))
 print("a变量指向内存地址为：%s"%id(b))
+test()
+
+## 函数封装：
+print("="*30)
+print("学生管理系统".center(30))
+print("输入1： 添加学生")
+print("输入2： 查找学生")
+print("输入3： 修改学生")
+print("输入4： 删除学生")
+print("输入5： 查看所有学生")
+print("输入6： 退出")
+
+#一个学生包含多个信息，一个学生一个字典。学生列表用列表存储。
+stus=[]
+while True:
+    operate = input("请输入你想要的操作：")
+    if operate=="1":
+        name = input("请输入添加学生的姓名：")
+        age  = int(input("请输入学生的年龄："))
+        qq   = input("请输入学生的QQ号:")
+
+#一个学生包括三个信息，这三个信息存到一个字典中。
+        stu = {}        #申明一个字典变量；
+        stu["name"] = name
+        stu["age"]  = age
+        stu["qq"]   = qq
+        stus.append(stu)
+        print("添加成功")
+
+    if(operate=="2"):
+        name = input("请输入要查找学生的姓名：")
+        for item in stus:
+            if item["name"]==name.strip(): #判断字典中有包含查询学生
+                print("%s 学生存在，年龄为：%s, QQ号为：%s" %(item["name"], item["age"], item["qq"]))
+                break
+            else:
+                print("学生%s没有找到"%name)
+
+    if(operate=="3"):
+    if(operate=="4"):
+        name = input("please input name:")
+    if(operate=="5"):
+        
+    
