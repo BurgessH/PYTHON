@@ -1,4 +1,4 @@
-#函数：
+ #函数：
 ##1.0.局部变量和全局变量()
 a = 400 #全局变量，可以在后面的代码中使用。
 def test1():
@@ -130,4 +130,22 @@ while True:
         name = input("please input name:")
     if(operate=="5"):
         
-    
+##递归函数的调用：
+def get_num(n):
+    if n==1 or n==2:
+        return 1
+    return get_num(n-1) + get_num(n-2)
+#sum = get_num(8)
+#print(sum)
+
+nums = []
+for i in range(1,21):
+    nums.append(get_num(i))
+print(nums)
+
+def fun(n):
+    if n==1:
+        return 1
+    return n*fun(n-1)
+sum = fun(5)
+print(sum)
